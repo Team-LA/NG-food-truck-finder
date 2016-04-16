@@ -1,7 +1,18 @@
 {
-  "description": "Food Truck Finder",
-  "dependencies": {
-    "angular": "^1.5.4",
-    "angular-ui-router": "^0.2.18"
-  }
+  "name": "client",
+  "homepage": "https://github.com/Team-LA/NG-food-truck-finder",
+  "authors": [
+    "Zoe Chen <shzoechen@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
