@@ -1,0 +1,7 @@
+{
+  "description": "Food Truck Finder",
+  "dependencies": {
+    "angular": "^1.5.4",
+    "angular-ui-router": "^0.2.18"
+  }
+}
