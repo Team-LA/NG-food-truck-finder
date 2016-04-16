@@ -1,10 +1,23 @@
-<!doctype html>
-<html lang="en">
+<DOCTYPE html>
+<html ng-app='finder'>
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+	<title>Food Truck Finder</title>
 </head>
 <body>
-<ui
+	<h1>Food Truck Finder</h1>
+    <div ui-view></div>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="auth/auth.controller.js"></script>
+<script src="services/auth.service.js"></script>
+<script src="services/profiledata.service.js"></script>
+<script src="services/truckdata.service.js"></script>
+<script src="profile/profile.controller.js"></script>
+<script src="trucks/findtrucks.controller.js"></script>
+<script src="map/map.controller.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>
