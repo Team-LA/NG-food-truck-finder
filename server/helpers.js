@@ -71,10 +71,21 @@ module.exports.userLogin = function(username, password, response) {
 	})
 };
 
+module.exports.getProfile = function(request, response) {
+	var id = request.id;
+	User.findById(id, function(err, user) {
+		if(err) {
+			response.status(500).send("server error.");
+		} else {
+			response.status(200).send(user);
+		}
+	})
+};
+
 module.exports.profile = function(request, response) {
 
-	//var id = request.id;
-	var id = "570fcadf4763551b1fcafe03"
+	var id = request.id;
+	//var id = "570fcadf4763551b1fcafe03"
 	var name = request.body.name;
 	var cuisine = request.body.cuisine;
 	var locations = request.body.locations;
@@ -115,9 +126,13 @@ module.exports.findTrucks = function(request, response) {
 	var date = new Date();
 	var day = date.getDay();
 	var time = date.getHours();
-	var address = request.body.address;
+	//var address = request.body.address;
 
-	sendRequest(address).then(function(res) {
+
+	var longitude = request.body.longitude;
+	var latitude = request.body.latitude;
+
+	//sendRequest(address).then(function(res) {
 
 		User.find({}, function(err, users) {
 			if(err) {
@@ -138,7 +153,7 @@ module.exports.findTrucks = function(request, response) {
 							thisLongitude = users[i].locations[j].longitude;
 							thisLatitude = users[i].locations[j].latitude;
 							//calculate distance between user and this truck
-							var distance = getDistance(res.latitude, res.longitude, thisLatitude, thisLongitude);
+							var distance = getDistance(latitude, longitude, thisLatitude, thisLongitude);
 							//sending current address information to the client
 							var copy = JSON.parse(JSON.stringify(users[i]));
 							copy.currentAddress = users[i].locations[j].address;
@@ -152,10 +167,8 @@ module.exports.findTrucks = function(request, response) {
 				}
 				response.status(201).send(trucks);
 			}
-		})
-	});
-
-
+		});
+	//});
 }
 
 module.exports.createToken = createToken = function(response, id) {
