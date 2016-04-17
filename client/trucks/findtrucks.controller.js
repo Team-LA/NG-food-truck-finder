@@ -17,10 +17,12 @@ angular.module('finder.trucks', [])
     	.then(function(resp){
 					$scope.trucks = resp;
 					console.log("resp", resp);
+				console.log("scope.trucks", $scope.trucks)
+
 			});
     });
-	};
+	}
 
 	$scope.getLocation = getLocation;
-	
+
 });

@@ -1,12 +1,17 @@
-<<<<<<< a1dbab1b1582a2f13cf9e5961a9e60ee739610b9
- node_modules
- client/bower_components
- .idea/
- .idea
- idea
- *.iml
-=======
- **/node_modules
- bower_components
- .idea/
->>>>>>> cleaned up gitignore
+node_modules
+**/node_modules
+
+client/bower_components
+bower_components
+
+.idea/
+
+idea
+*.iml
+
+
+
+
+
+
+

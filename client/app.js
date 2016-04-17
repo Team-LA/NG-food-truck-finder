@@ -32,7 +32,7 @@ angular.module('finder', [
       authenticate: true
     })
 
-    .state('trucks',
+    .state('trucks', {
       url: '/trucks',
       templateUrl: 'trucks/findtrucks.html',
       controller: 'FindtrucksController'
