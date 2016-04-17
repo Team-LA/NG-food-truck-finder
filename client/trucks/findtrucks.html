@@ -7,12 +7,12 @@
 	
 	<ul>
 		<li ng-repeat="truck in trucks">
-			<div ng-click="clickTruck()"> 
+			<div ng-click="hiddenDiv = !hiddenDiv"> 
 				<img src="{{truck.image}}" style="height:140px"></br>
 				{{truck.name}}</br>
 				{{truck.distance}} miles from you!</br>
 			</div>
-			<div ng-if="showMore">
+			<div ng-show="hiddenDiv">
 				{{truck.cuisine}}</br>
 				{{truck.currentAddress}}</br>
 			</div>

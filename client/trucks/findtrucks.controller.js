@@ -3,12 +3,8 @@ angular.module('finder.trucks', [])
 
 .controller('FindtrucksController', function ($scope, Truckdata) {
 
-	$scope.showMore = false;
+	$scope.hiddenDiv = false;
 
-	function clickTruck(){
-		$scope.showMore = true;
-		console.log("I was run!")
-	};
 
 
 	var longitude;
@@ -39,6 +35,6 @@ angular.module('finder.trucks', [])
 
 	
 	$scope.getLocation = getLocation;
-	$scope.clickTruck = clickTruck;
+	
 	
 });
