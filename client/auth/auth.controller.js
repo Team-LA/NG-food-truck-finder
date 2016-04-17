@@ -7,6 +7,7 @@ angular.module('finder.auth', [])
       .then(function (token) {
         console.log("token in signin", token)
         $window.localStorage.setItem('token', token);
+
         $location.path('/profile');
       })
       .catch(function (error) {
@@ -20,6 +21,7 @@ angular.module('finder.auth', [])
         console.log("token in signup", token)
         $window.localStorage.setItem('token', token);
         $location.path('/profile');
+
       })
       .catch(function (error) {
         console.error(error);

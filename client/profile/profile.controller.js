@@ -6,4 +6,5 @@ angular.module('finder.profile', [])
 		$window.localStorage.removeItem('token');
 		$state.go('trucks');
 	}
+
 });

@@ -34,5 +34,6 @@ angular.module('auth.service',[])
 	    signin: signin,
 	    signup: signup,
 	    isAuth: isAuth
+
 	  };
 });

@@ -33,6 +33,7 @@ angular.module('finder', [
             controller: 'ProfileController',
             authenticate: true
 
+
         })
         
         .state('trucks', {
