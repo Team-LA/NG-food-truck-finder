@@ -9,18 +9,19 @@ var initData = [
 	{
 	 "name": "Cheesy Bizness",
 	 "username": "cheesy",
-	 "password": "cheesy",
+	 "password": "$2a$10$fPKoOpZhjHw1snXUGorn0ORa.rBTswXBoIba25G9DeAF3Wx/h3sD6",
 	 "image": "http://arlingtonva.s3.amazonaws.com/wp-content/uploads/sites/25/2013/12/foodtruck.jpeg",
 	 "cuisine": "Mediterranean",
 	 "locations":[
 	     {
 	     "latitude": 34.0196705,
      	 "longitude": -118.4802497,
-	     "address": "1408 Olympic Blvd Santa Monica, CA 90404", 
+	     "address": "1408 Olympic Blvd Santa Monica, CA 90404",
 	     "hours":{
-	         "1": [8,17]
+	         "1": [8,22],
+	         "0": [6,23]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.0300029,
 	     	"longitude": -118.4689268,
@@ -41,17 +42,18 @@ var initData = [
 	     {
 	     	"latitude": 34.0019939,
 	     	"longitude": -118.4838825,
-	     "address": "2612 Main St Santa Monica, CA 90405", 
+	     "address": "2612 Main St Santa Monica, CA 90405",
 	     "hours":{
-	         "1": [8,17]
+	         "1": [8,22]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.0300029,
 	     	"longitude": -118.4689268,
 	     "address": "2700 Pennsylvania Ave Santa Monica, CA 90404",
 	     "hours": {
-	         "3":[9,20]
+	         "3":[9,20],
+	         "0": [6,23]
 	         }
 	     }
 	 ]
@@ -59,18 +61,19 @@ var initData = [
 	{
 	 "name": "Calbi Truck",
 	 "username": "calbi",
-	 "password": "calbi",
+	 "password": "$2a$10$jYcHY/p4pd2hqTY/C4bY9eR9ohuZdG7fM980eYwVVcDb28Q.b4V4K",
 	 "image": "http://www.adweek.com/files/imagecache/node-detail/news_article/fea-food-truck-hed-2012.jpg",
 	 "cuisine": "Thai",
 	 "locations":[
 	     {
 	     	"latitude": 34.0002554,
 	     	"longitude": -118.4821436,
-	     "address": "2728 Main St Santa Monica, CA 90405", 
+	     "address": "2728 Main St Santa Monica, CA 90405",
 	     "hours":{
-	         "1": [10,22]
+	         "1": [10,22],
+	         "0": [10,23]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.0300029,
 	     	"longitude": -118.4689268,
@@ -91,11 +94,11 @@ var initData = [
 	     {
 	     "latitude": 33.990401,
      	 "longitude": -118.464175,
-	     "address": "1515 Abbot Kinney Blvd, Venice, CA 90291", 
+	     "address": "1515 Abbot Kinney Blvd, Venice, CA 90291",
 	     "hours":{
 	         "1": [9,19]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.057932,
 	     	"longitude": -118.445326,
@@ -116,17 +119,18 @@ var initData = [
 	     {
 	     "latitude": 34.029768,
      	 "longitude": -118.470261,
-	     "address": "26th St & Pennsylvania Ave, Santa Monica, CA 90404", 
+	     "address": "26th St & Pennsylvania Ave, Santa Monica, CA 90404",
 	     "hours":{
-	         "1": [10,18]
+	         "1": [10,19]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.046976,
 	     	"longitude": -118.336806,
 	     "address": "Wilshire Boulevard & San Vicente Boulevard, Los Angeles, CA 90025",
 	     "hours": {
-	         "2":[11,20]
+	         "2":[11,20],
+	         "0": [6,23]
 	         }
 	     }
 	 ]
@@ -141,11 +145,11 @@ var initData = [
 	     {
 	     "latitude": 34.016643,
      	 "longitude": -118.500960,
-	     "address": "1221 Ocean Ave, Santa Monica, CA 90401", 
+	     "address": "1221 Ocean Ave, Santa Monica, CA 90401",
 	     "hours":{
 	         "1": [8,20]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.017298,
 	     	"longitude": -118.488386,
@@ -166,11 +170,11 @@ var initData = [
 	     {
 	     "latitude": 34.020585,
      	 "longitude": -118.452993,
-	     "address": "Ocean Park Blvd & 31st St, Santa Monica, CA 90405", 
+	     "address": "Ocean Park Blvd & 31st St, Santa Monica, CA 90405",
 	     "hours":{
 	         "1": [10,18]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.016903,
 	     	"longitude": -118.494099,
@@ -191,11 +195,11 @@ var initData = [
 	     {
 	     "latitude": 34.044005,
      	 "longitude": -118.468180,
-	     "address": "12121 Wilshire Blvd, Los Angeles, CA 90025", 
+	     "address": "12121 Wilshire Blvd, Los Angeles, CA 90025",
 	     "hours":{
 	         "1": [10,17]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.017298,
 	     	"longitude": -118.501701,
@@ -216,11 +220,11 @@ var initData = [
 	     {
 	     "latitude": 34.022520,
      	 "longitude": -118.507700,
-	     "address": "757 Ocean Ave, Santa Monica, CA 90402", 
+	     "address": "757 Ocean Ave, Santa Monica, CA 90402",
 	     "hours":{
 	         "1": [6,18]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.0300029,
 	     	"longitude": -118.4689268,
@@ -241,11 +245,11 @@ var initData = [
 	     {
 	     "latitude": 34.018366,
      	 "longitude": -118.486679,
-	     "address": "929 Colorado Ave, Santa Monica, CA 90401", 
+	     "address": "929 Colorado Ave, Santa Monica, CA 90401",
 	     "hours":{
 	         "1": [10,20]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.007844,
 	     	"longitude": -118.490630,
@@ -266,11 +270,11 @@ var initData = [
 	     {
 	     "latitude": 34.010671,
      	 "longitude": -118.470555,
-	     "address": "2520 14th St, Santa Monica, CA 90405", 
+	     "address": "2520 14th St, Santa Monica, CA 90405",
 	     "hours":{
 	         "1": [7,17]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.003046,
 	     	"longitude": -118.484579,
@@ -291,17 +295,18 @@ var initData = [
 	     {
 	     "latitude": 34.002317,
      	 "longitude": -118.483915,
-	     "address": "Ocean Park Blvd & Main St, Santa Monica, CA 90405", 
+	     "address": "Ocean Park Blvd & Main St, Santa Monica, CA 90405",
 	     "hours":{
 	         "1": [8,18]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.017845,
 	     	"longitude": -118.501496,
 	     "address": "101 Wilshire Blvc, Santa Monica, CA 90403",
 	     "hours": {
-	         "3":[8,20]
+	         "3":[8,20],
+	         "0": [6,23]
 	         }
 	     }
 	 ]
@@ -316,11 +321,11 @@ var initData = [
 	     {
 	     "latitude": 34.045006,
      	 "longitude": -118.524123,
-	     "address": "15120 W Sunset Blvd, Pacific Palisades, CA 90272", 
+	     "address": "15120 W Sunset Blvd, Pacific Palisades, CA 90272",
 	     "hours":{
 	         "1": [10,20]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.007036,
 	     	"longitude": -118.488575,
@@ -341,11 +346,12 @@ var initData = [
 	     {
 	     "latitude": 34.031391,
      	 "longitude": -118.459236,
-	     "address": "Olympic Blvd & Centinela Ave, Santa Monica, CA 90404", 
+	     "address": "Olympic Blvd & Centinela Ave, Santa Monica, CA 90404",
 	     "hours":{
-	         "1": [7,19]
+	         "1": [7,19],
+	         "0": [10,23]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.012848,
 	     	"longitude": -118.466553,
@@ -366,11 +372,11 @@ var initData = [
 	     {
 	     "latitude": 34.001994,
      	 "longitude": -118.483882,
-	     "address": "2612 Main St, Santa Monica, CA 90405", 
+	     "address": "2612 Main St, Santa Monica, CA 90405",
 	     "hours":{
 	         "1": [9,19]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.0300029,
 	     	"longitude": -118.4689268,
@@ -390,11 +396,11 @@ var initData = [
 	     {
 	     "latitude": 34.053793,
      	 "longitude": -118.429971,
-	     "address": "10635 Santa Monica Blvd Los Angeles, CA 90025", 
+	     "address": "10635 Santa Monica Blvd Los Angeles, CA 90025",
 	     "hours":{
 	         "1": [10,20]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.031865,
 	     	"longitude": -118.483218,
@@ -415,11 +421,11 @@ var initData = [
 	     {
 	     "latitude": 34.000669,
      	 "longitude": -118.482582,
-	     "address": "2708 Main St, Santa Monica, CA 90405", 
+	     "address": "2708 Main St, Santa Monica, CA 90405",
 	     "hours":{
 	         "1": [8,18]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.0300029,
 	     	"longitude": -118.4689268,
@@ -440,11 +446,11 @@ var initData = [
 	     {
 	     "latitude": 34.021751,
      	 "longitude": -118.453964,
-	     "address": " 31st St, Santa Monica, CA 90405", 
+	     "address": " 31st St, Santa Monica, CA 90405",
 	     "hours":{
 	         "1": [8,16]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.101163,
 	     	"longitude": -118.343716,
@@ -465,17 +471,18 @@ var initData = [
 	     {
 	     "latitude": 34.044132,
      	 "longitude": -118.455135,
-	     "address": "11654 Santa Monica Blvd Los Angeles, CA 90025", 
+	     "address": "11654 Santa Monica Blvd Los Angeles, CA 90025",
 	     "hours":{
 	         "1": [10,22]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 34.027529,
 	     	"longitude": -118.488415,
 	     "address": "1423 Wilshire Blvd, Santa Monica, CA 90403",
 	     "hours": {
-	         "2":[10,22]
+	         "2":[10,22],
+	         "0": [10,23]
 	         }
 	     }
 	 ]
@@ -490,11 +497,11 @@ var initData = [
 	     {
 	     "latitude": 34.138953,
      	 "longitude": -118.210849,
-	     "address": "2006 Colorado Blvd, Los Angeles, CA 90041", 
+	     "address": "2006 Colorado Blvd, Los Angeles, CA 90041",
 	     "hours":{
 	         "1": [8,22]
 	         }
-	     }, 
+	     },
 	     {
 	     	"latitude": 33.992751,
 	     	"longitude": -118.454686,
@@ -511,8 +518,8 @@ var saveInitData = function() {
 
 
 			var index = 0;
-			helpers.promiseWhile(function () { return index < iniData.length; }, function () {
-				var user = new User(iniData[index]);
+			helpers.promiseWhile(function () { return index < initData.length; }, function () {
+				var user = new User(initData[index]);
 				user.save(function(err, data) {
 					if(err) console.log(err);
 					else {
@@ -520,8 +527,8 @@ var saveInitData = function() {
 					}
 				});
 				index++;
-				return Q.delay(300); 
-			}).done();	
+				return Q.delay(300);
+			}).done();
 }
 
 
