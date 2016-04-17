@@ -59,7 +59,6 @@ angular.module('finder', [
       request: function(object) {
         var jwt = $window.localStorage.getItem('token');
         if (jwt) {
-            console.log('has jwt')
           object.headers['x-access-token'] = jwt;
         }
         object.headers['Allow-Control-Allow-Origin'] = '*';

@@ -1,2 +1,11 @@
-<p>profile</p>
-<button ng-click="logout()">Log Out</button>
+<header ng-include="'layout/navprofile.html'"></header>
+
+<button ng-click="getProfile()">Get profile</button>
+
+<ul className = "nav navbar-nav">
+ <li class = "active"><a ui-sref="trucks">ICON</a></li>
+</ul>
+
+<ul className="nav-pills pull-right">
+ <li><button ng-click = "logout()">Logout</button></li>
+</ul>

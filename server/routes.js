@@ -14,8 +14,8 @@ var url = require('./config.js').url;
 mongoose.connect(url);
 var db = mongoose.connection;
 //One Time Only, to import init data
-// var saveInitData = require('./initData.js');
-// saveInitData();
+//var saveInitData = require('./initData.js');
+//saveInitData();
 
 router.post('/signup', function(request, response) {
 

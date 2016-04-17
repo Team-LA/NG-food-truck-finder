@@ -8,9 +8,9 @@ angular.module('auth.service',[])
 		    data: user
 		  })
 		  .then(function (resp) {
-		  	console.log('resp.data in signin', resp.data)
+		  	console.log('resp.data in signin', resp)
 
-		    return resp.data;
+		    return resp;
 		  });
 		};
 
