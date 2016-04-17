@@ -166,13 +166,6 @@ module.exports.findTrucks = function(request, response) {
 				response.status(201).send(trucks);
 			}
 		});
-<<<<<<< HEAD
-//	});
-
-
-=======
-	//});
->>>>>>> remotes/origin/server_routes
 }
 
 module.exports.createToken = createToken = function(response, id) {
