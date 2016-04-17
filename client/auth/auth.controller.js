@@ -6,9 +6,9 @@ angular.module('finder.auth', [])
     Auth.signin($scope.user)
       .then(function (token) {
         console.log("token in signin", token)
-        $window.localStorage.setItem('com.shortly', token);
-        $location.path('/profile');
-      })
+
+        $window.localStorage.setItem('token', token);
+
       .catch(function (error) {
         console.error(error);
       });
@@ -18,8 +18,10 @@ angular.module('finder.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         console.log("token in signup", token)
-        $window.localStorage.setItem('com.shortly', token);
-        $location.path('/myProfile');
+
+        $window.localStorage.setItem('token', token);
+        $location.path('/profile');
+
       })
       .catch(function (error) {
         console.error(error);

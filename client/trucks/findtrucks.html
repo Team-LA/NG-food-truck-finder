@@ -1,14 +1,17 @@
 
 <div ng-cntroller="FindtrucksController">
 
-	<button ng-click="getTrucks()">Find Nearby Trucks!
-	</button>
-	</br>
-	
-	<ul>
-		<li ng-repeat="truck in trucks"><img src="{{truck.image}}" style="height:140px"></br>{{truck.name}}</br>{{truck.cuisine}}</br>{{truck.currentAddress}}</br>{{truck.distance}} miles from you!</br></li>
-	</ul>
-	
+<button ng-click="getTrucks()">Find Nearby Trucks!</button></br>
+
+<ul>
+	<li ng-repeat="truck in trucks">
+    <img src="{{truck.image}}" style="height:140px">
+    </br>{{truck.name}}
+    </br>{{truck.cuisine}}
+    </br>{{truck.currentAddress}}
+    </br>{{truck.distance}} miles from you!</br>
+  </li>
+</ul>
 
 </div>
 

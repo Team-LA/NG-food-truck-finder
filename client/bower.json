@@ -1,0 +1,11 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/Team-LA/NG-food-truck-finder",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "angular": "^1.5.4",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6"
+  }
+}
