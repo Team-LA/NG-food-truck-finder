@@ -26,8 +26,13 @@ angular.module('auth.service',[])
 		  });
 		};
 
+		var isAuth = function () {
+		  return !!$window.localStorage.getItem('token');
+		};
+
 		return {
 	    signin: signin,
-	    signup: signup
+	    signup: signup,
+	    isAuth: isAuth
 	  };
 });
