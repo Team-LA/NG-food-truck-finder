@@ -118,6 +118,7 @@ module.exports.findTrucks = function(request, response) {
 	// var address = request.body.address;
 	var longitude = request.body.longitude;
 	var latitude = request.body.latitude;
+	console.log("findTrucks request.body", request.body);
 
 //	sendRequest(address).then(function(res) {
 
@@ -147,7 +148,7 @@ module.exports.findTrucks = function(request, response) {
 							copy.currentLongitude = users[i].locations[j].longitude;
 							copy.currentLatitude = users[i].locations[j].latitude;
 							copy.distance = distance;
-
+							console.log("distance", copy.distance);		
 							trucks.push(copy);
 						}						
 					}

@@ -2,34 +2,33 @@
 angular.module('finder.trucks', [])
 
 .controller('FindtrucksController', function ($scope, Truckdata) {
-	
-	$scoope.getTrucks = function() {
-		Trucksdata.getTrucks(getLocation(showPositionLongitude), getLocation(showPositionLatitude));
+	var longitude;
+	var latitude;
 
-	}
 	
-	function getLocation(cb) {
-	    if (navigator.geolocation) {
-	        navigator.geolocation.getCurrentPosition(cb);
-	    } else {
-	        console.log("Geolocation is not supported by this browser.");
-	    }
+	$scope.getTrucks = function() {
+		getLocation(Truckdata.getTrucks);
+
 	};
-	function showPositionLatitude(position) {
-	    return position.coords.latitude  
+	
+
+	function getLocation(cb) {
+	    navigator.geolocation.getCurrentPosition(function(position){
+	    	latitude = position.coords.latitude;
+	    	longitude = position.coords.longitude;
+	    	cb(longitude, latitude)
+	    	.then(function(resp){
+				$scope.trucks = resp;
+				console.log("resp", resp);
+				console.log("scope.trucks",$scope.trucks)
+			});
+	    });
 	    
 	};
-
-	function showPositionLongitude(position){
-		return position.coords.longitude
-	};
-
+	
 
 
 	
 	$scope.getLocation = getLocation;
-	$scope.showPositionLatitude = showPositionLatitude;
-	$scope.showPositionLongitude = showPositionLongitude;
-	$scope.getNearbyTrucks = getNearbyTrucks;
-
+	
 });

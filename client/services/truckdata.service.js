@@ -11,7 +11,7 @@ angular.module('truck.service',[])
 				latitude: latitude
 			} 
 		}).then(function(resp){
-			console.log(resp)
+			return resp.data;
 		})
 	}
 
