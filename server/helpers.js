@@ -48,7 +48,7 @@ module.exports.userLogin = function(username, password, response) {
 			console.error('error', err);
 			response.status(500).send("Server error.")
 		} else {
-			//if user does exist 
+			//if user does exist
 			if(user) {
 				//if password matches
 				bcrypt.compare(password, user.password, function(err, result) {
@@ -71,10 +71,21 @@ module.exports.userLogin = function(username, password, response) {
 	})
 };
 
+module.exports.getProfile = function(request, response) {
+	var id = request.id;
+	User.findById(id, function(err, user) {
+		if(err) {
+			response.status(500).send("server error.");
+		} else {
+			response.status(200).send(user);
+		}
+	})
+};
+
 module.exports.profile = function(request, response) {
 
-	//var id = request.id;
-	var id = "570fcadf4763551b1fcafe03"
+	var id = request.id;
+	//var id = "570fcadf4763551b1fcafe03"
 	var name = request.body.name;
 	var cuisine = request.body.cuisine;
 	var locations = request.body.locations;
@@ -105,9 +116,9 @@ module.exports.profile = function(request, response) {
 						response.status(201).send(user);
 					}
 				});
-			}).done();	
+			}).done();
 		}
-	  
+
 	});
 };
 
@@ -115,17 +126,17 @@ module.exports.findTrucks = function(request, response) {
 	var date = new Date();
 	var day = date.getDay();
 	var time = date.getHours();
+
 	// var address = request.body.address;
 	var longitude = request.body.longitude;
 	var latitude = request.body.latitude;
 
 //	sendRequest(address).then(function(res) {
-
 		User.find({}, function(err, users) {
 			if(err) {
-				console.error('err', err); 
+				console.error('err', err);
 			} else {
-				var trucks = [];				
+				var trucks = [];
 				//looping through all the users
 				for(var i = 0; i < users.length; i++) {
 					//looping through all the locations of every user
@@ -147,17 +158,21 @@ module.exports.findTrucks = function(request, response) {
 							copy.currentLongitude = users[i].locations[j].longitude;
 							copy.currentLatitude = users[i].locations[j].latitude;
 							copy.distance = distance;
-							console.log("distance", copy.distance);		
+							console.log("distance", copy.distance);
 							trucks.push(copy);
-						}						
+						}
 					}
 				}
 				response.status(201).send(trucks);
 			}
 		});
+<<<<<<< HEAD
 //	});
 
 
+=======
+	//});
+>>>>>>> remotes/origin/server_routes
 }
 
 module.exports.createToken = createToken = function(response, id) {
@@ -207,7 +222,7 @@ var sendRequest = function(address) {
 				body += chunk;
 			});
 			res.on('end', function(error) {
-				if(error) {	
+				if(error) {
 					reject(error);
 				} else {
 					//get current address's longitude latitude
@@ -218,7 +233,7 @@ var sendRequest = function(address) {
 				}
 			})
 		})
-	});	
+	});
 }
 
 // `condition` is a function that returns a boolean

@@ -43,7 +43,11 @@ router.post('/login', function(request, response) {
 	}
 });
 
-router.post('/profile', function(request, response) {
+router.get('/profile', helpers.verifyToken, function(request, response) {
+	helpers.getProfile(request, response);
+});
+
+router.post('/profile', helpers.verifyToken, function(request, response) {
 	//save updated data in database
 	helpers.profile(request, response);
 });
