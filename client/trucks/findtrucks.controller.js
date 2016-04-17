@@ -3,17 +3,33 @@ angular.module('finder.trucks', [])
 
 .controller('FindtrucksController', function ($scope, Truckdata) {
 	
-	function getGeoLocation(){
-		//get geolocation from browser and post it to the server
-		navigator.geolocation.getCurrentPosition
+	$scoope.getTrucks = function() {
+		Trucksdata.getTrucks(getLocation(showPositionLongitude), getLocation(showPositionLatitude));
+
+	}
+	
+	function getLocation(cb) {
+	    if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(cb);
+	    } else {
+	        console.log("Geolocation is not supported by this browser.");
+	    }
+	};
+	function showPositionLatitude(position) {
+	    return position.coords.latitude  
+	    
 	};
 
-	function getNearbyTrucks(trucks array from truckdata.service){
-		//get array of truck objects whose truck distance property is less than a certain distance
-	}
+	function showPositionLongitude(position){
+		return position.coords.longitude
+	};
 
 
-	$scope.getGeoLocation = getGeoLocation;
+
+	
+	$scope.getLocation = getLocation;
+	$scope.showPositionLatitude = showPositionLatitude;
+	$scope.showPositionLongitude = showPositionLongitude;
 	$scope.getNearbyTrucks = getNearbyTrucks;
 
 });
