@@ -1,24 +1,27 @@
+
 angular.module('finder.profile', [])
-
-
-// .controller('ProfileController', function ($scope, $state, $window, ProfileData) {
-//need to include factory name in parameters
-
-
-
+	
 .controller('ProfileController', function($scope, $window, $state, HttpRequest) {
-	$scope.userData = {};
-	console.log('inside profile controller');
-	$scope.getProfile = function () {
-		HttpRequest.get().then(function (data) {
-			$scope.userData.profile= data;
-			console.log($scope.userData.profile);
+  $scope.hasProfile = false;
+	$scope.noProfile = false; 	
+  $scope.user = {};
+  console.log('inside profile controller');
 
-		});
-	};
-	$scope.logout = function() {
-		$window.localStorage.removeItem('token');
-		$state.go('trucks');
-	}
-});
+  $scope.getProfile = function () {
 
+  HttpRequest.get().then(function (data) {
+  $scope.user =data;
+    console.log('scope.user', $scope.user);
+  });
+ };
+
+  $scope.getProfile()
+
+  $scope.shouldShow = function() {
+     if (scope.user.name) {
+       $scope.hasProfile = true;
+     } else {
+       $scope.noProfile = true;
+     }
+   }
+})

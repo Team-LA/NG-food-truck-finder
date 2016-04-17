@@ -1,7 +1,21 @@
 <header ng-include="'layout/navprofile.html'"></header>
-
-
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click = "getProfile()"> Go
 </button>
+
+<button ng-click="getProfile()">Get profile</button>
+
+<div ng-if=false>
+
+<ul ng-show = "hasProfile">
+  <li> Name: {{user.name}}</li>
+  <li> Cuisine: {{user.cuisine}}</li>
+</ul>
+
+<ul ng-show = "noProfile">
+  <li>HELLOO</li>
+</ul>
+
+</div>
+
 
 
