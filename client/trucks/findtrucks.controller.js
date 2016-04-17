@@ -2,10 +2,19 @@
 angular.module('finder.trucks', [])
 
 .controller('FindtrucksController', function ($scope, Truckdata) {
+
+	$scope.showMore = false;
+
+	function clickTruck(){
+		$scope.showMore = true;
+		console.log("I was run!")
+	};
+
+
 	var longitude;
 	var latitude;
-
 	
+
 	$scope.getTrucks = function() {
 		getLocation(Truckdata.getTrucks);
 
@@ -25,10 +34,11 @@ angular.module('finder.trucks', [])
 	    });
 	    
 	};
-	
+
 
 
 	
 	$scope.getLocation = getLocation;
+	$scope.clickTruck = clickTruck;
 	
 });

@@ -6,7 +6,17 @@
 	</br>
 	
 	<ul>
-		<li ng-repeat="truck in trucks"><img src="{{truck.image}}" style="height:140px"></br>{{truck.name}}</br>{{truck.cuisine}}</br>{{truck.currentAddress}}</br>{{truck.distance}} miles from you!</br></li>
+		<li ng-repeat="truck in trucks">
+			<div ng-click="clickTruck()"> 
+				<img src="{{truck.image}}" style="height:140px"></br>
+				{{truck.name}}</br>
+				{{truck.distance}} miles from you!</br>
+			</div>
+			<div ng-if="showMore">
+				{{truck.cuisine}}</br>
+				{{truck.currentAddress}}</br>
+			</div>
+		</li>
 	</ul>
 	
 
