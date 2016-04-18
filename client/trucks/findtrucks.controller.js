@@ -31,10 +31,35 @@ angular.module('finder.trucks', [])
 	    
 	};
 
+	function showHours(array){
+		$scope.hours = '';
+		$scope.address = '';
+		$scope.day = '';
+		for(var i =0; i<array.length; i++){
+			for(var key in array[i]){
+				if(key==="address"){
+					$scope.address = array[i][key]
+				}
+				if( key === "hours"){
+					for(var key2 in array[i][key]){
+						if(key2 = "1"){
+							$scope.day = "Monday";
+							if(array[i][key][key2]){
+								$scope.hours = array[i][key][key2][0]+"am"+ " to " +(array[i][key][key2][1]-12) +"pm" 
+							}
+						}
+					}
+				}
+			}
+		};
+	};
+
+
+
 
 
 	
 	$scope.getLocation = getLocation;
-	
+	$scope.showHours = showHours;
 	
 });

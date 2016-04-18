@@ -6,15 +6,18 @@
 	</br>
 	
 	<ul>
-		<li ng-repeat="truck in trucks">
-			<div ng-click="hiddenDiv = !hiddenDiv"> 
-				<img src="{{truck.image}}" style="height:140px"></br>
+		<li ng-repeat="truck in trucks | orderBy:'distance'">
+			<div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)"> 
+				<div class = "image">
+					<img src="{{truck.image}}" style="height:140px"></br>
+				</div>
 				{{truck.name}}</br>
 				{{truck.distance}} miles from you!</br>
 			</div>
 			<div ng-show="hiddenDiv">
 				{{truck.cuisine}}</br>
 				{{truck.currentAddress}}</br>
+				{{day}} from {{hours}}, at {{address}} 
 			</div>
 		</li>
 	</ul>
