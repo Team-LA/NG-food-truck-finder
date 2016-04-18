@@ -11,7 +11,7 @@
 
 </div>
 
-<div ng-controller="FindTrucksController" ng-init="getTrucks()">
+<div ng-cntroller="FindtrucksController" ng-init="getTrucks()">
 
 	</br>
 	<ul>
@@ -33,58 +33,3 @@
 
 </div>
 
-<!--
-<div layout layout-wrap layout-sm="column" layout-xs="column" style="min-height:100vh">
-  <div class="container" flex="50" flex-sm="100" flex-xs="100" ng-repeat="truck in trucks | orderBy:'distance'" >
-  <div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
-
-    <md-card flex>
-      <img src="{{truck.image}}" style="height:2em">
-      <ul class = "wrap">
-        <li>{{truck.name}}</li>
-        <li>{{truck.distance}} miles from you!</li>
-      </ul>
-
-      <div ng-show="hiddenDiv">
-        {{truck.cuisine}}</br>
-        {{truck.currentAddress}}</br>
-        {{day}} from {{hours}}, at {{address}}
-      </div>
-
-    </md-card>
-
-  </div>
-  </div>
-</div>
-
--->
-<!--
-
-angular.module('FindTrucksController', ['ngMaterial'])
-.config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('altTheme')
-    .primaryPalette('purple');
-})
-<div ng-controller="FindTrucksController" layout="column" flex="" layout-fill="" ng-cloak="" ng-app="finder">
-
-&lt;!&ndash;  <md-toolbar md-scroll-shrink="">
-    <div class="md-toolbar-tools">My Messages</div>
-  </md-toolbar>&ndash;&gt;
-
-  <md-content style="height: 600px;" md-theme="altTheme">
-
-    <section>
-      <md-subheader class="md-primary">Food Trucks Near You!</md-subheader>
-      <md-list layout-padding="">
-        <md-list-item class="md-3-line" ng-repeat="truck in trucks">
-            <img ng-src="{{truck.image}}" class="md-avatar" alt="{{truck.name}}">
-            <div class="md-list-item-text">
-              <h3>{{truck.name}}</h3>
-              <h4>{{truck.currentAddress}}</h4>
-              <p>
-                {{truck.distance}} miles from you!
-              </p>
-            </div>
-        </md-list-item>
-      </md-list>
-    </section>-->

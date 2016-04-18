@@ -38,7 +38,7 @@ angular.module('finder', [
         .state('trucks', {
             url: '/trucks',
             templateUrl: 'trucks/findtrucks.html',
-            controller: 'FindTrucksController'
+            controller: 'FindtrucksController'
 
         })
 
