@@ -3,8 +3,8 @@ angular.module('finder.trucks', ['uiGmapgoogle-maps'])
 .controller('FindtrucksController', function ($scope, Truckdata) {
   var longitude;
   var latitude;
-  
-  
+
+
 $scope.hiddenDiv = false;
 
 
@@ -93,7 +93,7 @@ $scope.hiddenDiv = false;
 						if(key2 = "1"){
 							$scope.day = "Monday";
 							if(array[i][key][key2]){
-								$scope.hours = array[i][key][key2][0]+"am"+ " to " +(array[i][key][key2][1]-12) +"pm" 
+								$scope.hours = array[i][key][key2][0]+"am"+ " to " +(array[i][key][key2][1]-12) +"pm"
 							}
 						}
 					}

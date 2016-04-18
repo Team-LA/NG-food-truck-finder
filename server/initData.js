@@ -505,9 +505,9 @@ var initData = [
 	     {
 	     	"latitude": 33.992751,
 	     	"longitude": -118.454686,
-	     "address": "920 S Venice Blvd Los Angeles, CA 90291",
+	     "address": "920 S Venice Blvd Los Angeles, CA 90291"
 	     "hours": {
-	         "3":[8,20]
+	         "0":[0, 23]
 	         }
 	     }
 	 ]

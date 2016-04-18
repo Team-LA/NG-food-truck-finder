@@ -1,21 +1,31 @@
 angular.module('finder.profile', [])
 
 .controller('ProfileController', function($scope, $window, $state, HttpRequest) {
+
+    $scope.showProfile = false;
+    $scope.editProfile = true;
+
     $scope.userData = {};
     $scope.getProfile = function () {
         var token = $window.localStorage.getItem('token');
-        console.log('token', token)
         HttpRequest.get().then(function (data) {
             $scope.user= data;
+            if($scope.user.name) {
+                $scope.showProfile = true;
+                $scope.editProfile = false;
+            }
         });
     };
+
     $scope.logout = function() {
         $window.localStorage.removeItem('token');
         $state.go('trucks');
     }
-    $scope.getProfile()
-    
+
+    $scope.getProfile();
+
     $scope.toEditProfile = function() {
+        console.log('ngmodel', $scope.name);
         $scope.user = {};
         $scope.user.locations = [];
         $scope.user.name = $scope.name;
@@ -32,7 +42,11 @@ angular.module('finder.profile', [])
                 "0": [$scope.start0, $scope.end0]
             }
         });
-        console.log('ngmodel', $scope.user);
-        HttpRequest.post($scope.user)
+        HttpRequest.post($scope.user).then(function(resp){
+            console.log('line 46', resp.data)
+            console.log('line 47', '$scope.user',$scope.user)
+                $scope.showProfile = true;
+                $scope.editProfile = false;
+        });
     }
 });
