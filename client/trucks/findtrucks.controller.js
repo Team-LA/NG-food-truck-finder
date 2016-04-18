@@ -1,6 +1,6 @@
 angular.module('finder.trucks', ['uiGmapgoogle-maps'])
 
-.controller('FindtrucksController', function ($scope, Truckdata) {
+.controller('FindtrucksController', function ($scope, $location, Truckdata) {
   var longitude;
   var latitude;
 
@@ -102,7 +102,15 @@ $scope.hiddenDiv = false;
 		};
 	};
 
-
+  $scope.searchTruck = function() {
+    console.log('in searchTruck')
+    Truckdata.getTruck($scope.truckName)
+    .then(function(truck) {
+      $scope.trucks = [];
+      $scope.trucks.push(truck);
+      console.log('$scope.trucks', $scope.trucks)
+    });
+  }
 
 	$scope.getLocation = getLocation;
 	$scope.showHours = showHours;

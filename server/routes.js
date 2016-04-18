@@ -58,6 +58,10 @@ router.post('/findTrucks', function(request, response) {
 	helpers.findTrucks(request, response);
 });
 
+router.post('/findTruck', function(request, response) {
+	helpers.findTruck(request, response);
+});
+
 router.get('/logout', function(request, response) {
   request.session.destroy(function(){
     response.sendStatus(200);

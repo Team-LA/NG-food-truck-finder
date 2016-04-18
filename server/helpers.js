@@ -166,7 +166,20 @@ module.exports.findTrucks = function(request, response) {
 				response.status(201).send(trucks);
 			}
 		});
-}
+};
+
+module.exports.findTruck = function(request, response) {
+	console.log('findTruck')
+	var name = request.body.name;
+	User.findOne({name: name}, function(err, user) {
+		if(err) {
+			console.error('err', err);
+		} else {
+			console.log('find truck', user)
+			response.status(201).send(user);
+		}
+	});
+};
 
 module.exports.createToken = createToken = function(response, id) {
 

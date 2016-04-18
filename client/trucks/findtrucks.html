@@ -1,5 +1,11 @@
 <header ng-include="'layout/navtrucks.html '"></header>
 
+<form>
+	<input ng-model="truckName">
+	<button ng-click="searchTruck()">Go!</button>
+	<button ng-click="getTrucks()">Search Trucks Near You!</button>
+</form>
+
 <div id="map_canvas">
   <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
     <ui-gmap-markers models="Markers" coords="'self'" icon="icon">
