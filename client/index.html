@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app='finder'>
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Food Truck Finder</title>
 </head>
 <script src="bower_components/bootstrap/dist/css/"></script>
@@ -9,8 +10,13 @@
 
 <div ui-view></div>
 
-<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
 <script src="auth/auth.controller.js"></script>
 <script src="services/auth.service.js"></script>
 <script src="services/profiledata.service.js"></script>
