@@ -1,7 +1,7 @@
-
 <header ng-include="'layout/navprofile.html '"></header>
 
-<div id="profile">
+
+<div id="profile" ng-if="showProfile">
 	<p>
 		<span class="property">Name:</span>
 		<span class="value">{{user.name}}</span>
@@ -28,8 +28,9 @@
 
 </div>
 
-<div id="editProfile">
-	<h2>Edit Profile</h2>
+<div id="editProfile" ng-show="editProfile">
+	<p>You have no profile yet!</p>
+	<p>Edit Profile</p>
 		<form>
 		    <label>Enter your truck name</label>
 	        <input type="text" name="name" ng-model="name"><br>
@@ -365,4 +366,3 @@
 </div>
 
 <button ng-click="logout()">Log Out</button>
-
