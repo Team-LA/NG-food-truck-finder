@@ -106,7 +106,7 @@ $scope.hiddenDiv = false;
 
 
 	$scope.getLocation = getLocation;
-	// $scope.showHours = showHours;
+	$scope.showHours = showHours;
 });
 
 
