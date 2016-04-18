@@ -1,10 +1,15 @@
 <!--
 <div layout layout-wrap layout-sm="column" layout-xs="column" style="min-height:100vh">
-  <div class="container" flex="50" flex-sm="100" flex-xs="100" ng-repeat="truck in trucks | orderBy:'distance'" >
+  <div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
   <div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
 
     <md-card flex>
-      <img src="{{truck.image}}" style="height:2em">
+    <md-card-title-media>
+     <div class="md-media-md card-media">
+      <img src="{{truck.image}}" style="height:140">
+     </div>
+     </md-card-title-media>
+      </md-card-title>
       <ul class = "wrap">
         <li>{{truck.name}}</li>
         <li>{{truck.distance}} miles from you!</li>
@@ -195,3 +200,121 @@ angular
           'WY').split(' ').map(function (state) { return { abbrev: state }; });
     });
 })();
+
+
+<div ng-controller="AppCtrl" ng-cloak="" class="carddemoBasicUsage" ng-app="MyApp">
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs="" flex-gt-xs="50" layout="column">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch="">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Large</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch="">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Extra Large</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+          <div class="md-media-xl card-media"></div>
+
+          <md-card-actions layout="column">
+            <md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+            </md-button>
+          </md-card-actions>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div flex-xs="" flex-gt-xs="50" layout="column">
+      <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch="">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Small</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-sm card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+
+
+
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch="">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Medium</span>
+          </md-card-title-text>
+          <md-card-title-media>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+      <div layout="" layout-padding="" layout-align="center end" style="height:200px">
+        <md-checkbox ng-model="showDarkTheme">Use 'Dark' Themed Cards</md-checkbox>
+      </div>
+    </div>
+  </md-content>
+</div>
+
+
+<div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
+
+  <md-card flex>
+  <md-card-title-media>
+      <div class="md-media-md card-media">
+       <img ng-src="{{truck.image}}" class="md-card-image" style="width:140px">
+      </div>
+      </md-card-title-media>
+
+        <md-card-content>
+        <div class="md-subhead"><b>{{truck.name}}</b></div>
+        <div><font size= "2">{{truck.distance}} miles from you!<font/></div>
+          <div ng-show="hiddenDiv">
+           >{{day}} from {{hours}}</b>
+           {{truck.currentAddress}}
+          <font size="2">{{truck.cuisine}}</font>
+      </div>
+
+      <md-card-content/>
+
+<md-card>
+    </div>
+
+
+
+   	</div>
+
+
+<!--<md-card-title-media md-media-md>
+	    <div class="md-media-md caxrd-media">{{truck.image}}</div>-->
+        <!--<img style="width:140px">{{truck.image}}" <img>-->
+        <!--</div>-->

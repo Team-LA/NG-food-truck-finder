@@ -1,4 +1,12 @@
-<header ng-include="'layout/navtrucks.html '"></header>
+
+
+<div>
+<md-toolbar layout="row" class="md-whiteframe-z3" style="padding:0px;margin:0px;">
+  <h2 style="padding-left:10px">Food Truck Finder</h2>
+  <a style="padding-left:550px;color:#fff; padding-top:20px"><ui-sref= "signin"> SIGN IN</a>
+  </md-toolbar>`
+</div>
+	<div layout layout-wrap layout-sm="column" layout-xs="column" style="min-height:100vh" layout-align="center" >
 
 <form>
 	<input ng-model="truckName">
@@ -18,24 +26,43 @@
 </div>
 
 <div ng-cntroller="FindtrucksController" ng-init="getTrucks()">
+	  <div class="container" flex="40" ng-repeat="truck in trucks | orderBy:'distance'" layout-align="center" >
+	  <div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
+      <md-card >
+        <md-media-md>
+   	    <div class="md-media-md caxrd-media">
+   	    <img ng-src={{truck.image}} class = "md-card-image" style="width:140px">
+   	    </div>
+        </md-media-md>
+<md-card-content style="margin-auto">
+<div class="md-subhead"><b>{{truck.name}}</b></div>
+<div><font size= "2">{{truck.distance}} miles from you!<font/></div>
 
-	</br>
-	<ul>
-		<li ng-repeat="truck in trucks | orderBy:'distance'">
-			<div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
-				<div class = "image">
-					<img src="{{truck.image}}" style="height:140px"></br>
-				</div>
-				{{truck.name}}</br>
-				{{truck.distance}} miles from you!</br>
-			</div>
-			<div ng-show="hiddenDiv">
-				{{truck.cuisine}}</br>
-				{{truck.currentAddress}}</br>
-				{{day}} from {{hours}}, at {{address}}
-			</div>
-		</li>
-	</ul>
-
+<div ng-show="hiddenDiv">
+  <div><b>{{day}}</b> from <b>{{hours}}</b></div>
+  <div>{{truck.currentAddress}}</div>
+  <div><font size="2">{{truck.cuisine}}</font></div>
 </div>
 
+</md-card-content>
+</md-card>
+
+</div>
+</div>
+</div>
+<!--
+
+
+			     </md-card-title-media>
+	      &lt;!&ndash;<img src="{{truck.image}}" style="width:140px">&ndash;&gt;
+	      <ul class = "wrap">
+	        <li>{{truck.name}}</li>
+	        <li>{{truck.distance}} miles from you!</li>
+	      </ul>
+
+
+
+	    </md-card>
+
+
+-->
