@@ -1,0 +1,13 @@
+.angular-google-map-container {
+	background-color: #444444;
+	height: 300px;
+}
+html, body, #map_canvas {
+  height: 80%;
+  width: 100%;
+  margin: 0px;
+}
+
+#map_canvas {
+  position: relative;
+}

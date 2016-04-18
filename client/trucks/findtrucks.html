@@ -1,21 +1,32 @@
 <header ng-include="'layout/navtrucks.html '"></header>
 
-<div ng-cntroller="FindtrucksController">
+<div id="map_canvas">
+  <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+    <ui-gmap-markers models="Markers" coords="'self'" icon="icon">
+    </ui-gmap-markers>
+    <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+        visible="c.visible" geodesic="c.geodesic" clickable="c.clickable" control="c.control">
+    </ui-gmap-circle>
+  </ui-gmap-google-map>
 
-	<button ng-click="getTrucks()">Find Nearby Trucks!
-	</button>
+</div>
+
+<div ng-cntroller="FindtrucksController" ng-init="getTrucks()">
+
 	</br>
-	
 	<ul>
-		<li ng-repeat="truck in trucks">
-			<div ng-click="clickTruck()"> 
-				<img src="{{truck.image}}" style="height:140px"></br>
+		<li ng-repeat="truck in trucks | orderBy:'distance'">
+			<div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)"> 
+				<div class = "image">
+					<img src="{{truck.image}}" style="height:140px"></br>
+				</div>
 				{{truck.name}}</br>
 				{{truck.distance}} miles from you!</br>
 			</div>
-			<div ng-if="showMore">
+			<div ng-show="hiddenDiv">
 				{{truck.cuisine}}</br>
 				{{truck.currentAddress}}</br>
+				{{day}} from {{hours}}, at {{address}} 
 			</div>
 		</li>
 	</ul>
