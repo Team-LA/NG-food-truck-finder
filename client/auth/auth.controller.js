@@ -1,4 +1,4 @@
-angular.module('finder.auth', [])
+angular.module('finder.auth', ['ngMaterial'])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
 

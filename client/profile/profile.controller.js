@@ -14,7 +14,7 @@ angular.module('finder.profile', [])
         $state.go('trucks');
     }
     $scope.getProfile()
-    
+
     $scope.toEditProfile = function() {
         $scope.user = {};
         $scope.user.locations = [];
