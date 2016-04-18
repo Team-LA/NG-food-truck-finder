@@ -11,12 +11,12 @@
 
 </div>
 
-<div ng-cntroller="FindtrucksController" ng-init="getTrucks()">
+<div ng-controller="FindtrucksController" ng-init="getTrucks()">
 
 	</br>
 	<ul>
 		<li ng-repeat="truck in trucks | orderBy:'distance'">
-			<div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)"> 
+			<div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
 				<div class = "image">
 					<img src="{{truck.image}}" style="height:140px"></br>
 				</div>
@@ -26,10 +26,9 @@
 			<div ng-show="hiddenDiv">
 				{{truck.cuisine}}</br>
 				{{truck.currentAddress}}</br>
-				{{day}} from {{hours}}, at {{address}} 
+				{{day}} from {{hours}}, at {{address}}
 			</div>
 		</li>
 	</ul>
-	
-</div>
 
+</div>

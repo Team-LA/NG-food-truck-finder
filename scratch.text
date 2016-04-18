@@ -1,0 +1,62 @@
+<!--
+
+<div layout layout-wrap layout-sm="column" layout-xs="column" style="min-height:100vh">
+  <div class="container" flex="50" flex-sm="100" flex-xs="100" ng-repeat="truck in trucks | orderBy:'distance'" >
+  <div ng-click="hiddenDiv = !hiddenDiv; showHours(truck.locations)">
+
+    <md-card flex>
+      <img src="{{truck.image}}" style="height:2em">
+      <ul class = "wrap">
+        <li>{{truck.name}}</li>
+        <li>{{truck.distance}} miles from you!</li>
+      </ul>
+
+      <div ng-show="hiddenDiv">
+        {{truck.cuisine}}</br>
+        {{truck.currentAddress}}</br>
+        {{day}} from {{hours}}, at {{address}}
+      </div>
+
+    </md-card>
+
+  </div>
+  </div>
+</div>
+
+var obj = [
+{
+   hashKey:"object:22",
+  __v:0,
+  _id:"5713ef53972a10a24081d317",
+  cuisine:"French",
+  currentAddress: "2700 Pennsylvania Ave Santa Monica, CA 90404",
+  currentLatitude:34.0300029,
+  currentLongitude:-118.4689268,
+  distance:1.1,
+  image: "http://www.gainesvillegrub.com/wp-content/uploads/2015/04/West-Side-Food-Trucks_Full_20008.jpg",
+  locations: Array[2],
+  name: "Namaste Cafe",
+  password: "namaste",
+  username: "namaste"
+  }
+
+]
+
+
+
+
+
+
+
+      </md-card>
+
+
+    {{truck.image}}>
+
+   {{truck.name}}
+   {{truck.distance}} miles from you!
+
+  <div ng-show="hiddenDiv">
+   {{truck.cuisine}}</br>
+   {{truck.currentAddress}}</br>
+   {{day}} from {{hours}}, at {{address}}-->
