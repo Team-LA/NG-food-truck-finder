@@ -1,6 +1,9 @@
-
-<header ng-include="'layout/navprofile.html '"></header>
-
+<div>
+<md-toolbar layout="row" class="md-whiteframe-z3" style="padding:0px;margin:0px;">
+ <h2 style="padding-left:10px">Food Truck Finder</h2>
+ <a style="padding-left:500px;color:#fff; padding-top:20px"  ng-click = "logout()"> LOG OUT </a>
+ </md-toolbar>`
+</div>
 
 <div id="profile" ng-if="showProfile">
 	<p>
@@ -29,9 +32,9 @@
 
 </div>
 
-<div id="editProfile" ng-show="editProfile">
-	<p>You have no profile yet!</p>
-	<p>Edit Profile</p>
+<div id="editProfile" style="padding: 20px" ng-show="editProfile">
+	<h2>You have no profile yet!</h2>
+	<h3>Edit Profile</h3>
 		<form>
 		    <label>Enter your truck name</label>
 	        <input type="text" name="name" ng-model="name"><br>
