@@ -2,6 +2,7 @@ angular.module('finder', [
   'finder.auth',
   'finder.map',
   'finder.profile',
+  'finder.editProfile',
   'finder.trucks',
   'auth.service',
   'profile.service',
@@ -39,14 +40,13 @@ angular.module('finder', [
             url: '/trucks',
             templateUrl: 'trucks/findtrucks.html',
             controller: 'FindtrucksController'
-
         })
 
-        .state('map', {
-            url: '/trucks',
-            templateUrl: 'map/map.html',
-            controller: 'MapController'
-
+        .state('editProfile', {
+            url: '/editProfile',
+            templateUrl: 'profile/editProfile.html',
+            controller: 'EditProfileController',
+            authenticate: true
         });
 
     // We add our $httpInterceptor into the array

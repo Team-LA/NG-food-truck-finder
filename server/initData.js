@@ -19,7 +19,7 @@ var initData = [
 	     "address": "1408 Olympic Blvd Santa Monica, CA 90404",
 	     "hours":{
 	         "1": [8,22],
-	         "0": [6,23]
+	         "4": [6,23]
 	         }
 	     },
 	     {
@@ -505,7 +505,7 @@ var initData = [
 	     {
 	     	"latitude": 33.992751,
 	     	"longitude": -118.454686,
-	     "address": "920 S Venice Blvd Los Angeles, CA 90291"
+	     "address": "920 S Venice Blvd Los Angeles, CA 90291",
 	     "hours": {
 	         "0":[0, 23]
 	         }
