@@ -2,23 +2,21 @@ angular.module('finder.editProfile', [])
 
 .controller('EditProfileController', function($scope, $window, $state) {
 	$scope.cuisineTypes = ['Chinese', 'American'];
-	$scope.timeList = ['12:00am', '8:00am', '9:00am', '10:00am'];
+	$scope.timeList = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', '8:00pm', '9:00pm', '10:00pm', '11:00pm', ''];
 	$scope.addLocation = false;
 	$scope.locations = [];
 
 	$scope.editLocation = function(){
 		$scope.addLocation = false;
-		var location = {};
-		location.address = $scope.address;
-		location.hours = {};
-		location.hours["1"] = [$scope.start1, $scope.end1];
-		location.hours["2"] = [$scope.start2, $scope.end2];
-		location.hours["3"] = [$scope.start3, $scope.end3];
-		location.hours["4"] = [$scope.start4, $scope.end4];
-		location.hours["5"] = [$scope.start5, $scope.end5];
-		location.hours["6"] = [$scope.start6, $scope.end6];
-		location.hours["0"] = [$scope.start0, $scope.end0];
-		$scope.locations.push(location);
+		$scope.locations.push($scope.location);
+		$scope.location = {};
 		console.log('location', $scope.locations)
+	}
+
+	$scope.submitProfile = function(){
+		data.name = $scope.name;
+		data.cuisine = $scope.cuisine;
+		data.locations = $scope.locations;
+		HttpRequest.submitProfile(data);
 	}
 });

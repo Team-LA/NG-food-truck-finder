@@ -30,14 +30,30 @@
 	    </div>
 		</md-content> 
 
+
+		<h4>Tell us your locations and hours, so people can find your turck!</h4>
+		<!-- display added location -->
+		<div layout-padding ng-if="locations.length > 0" ng-repeat="loc in locations">
+			<p>Address: {{loc.address}}</p>
+			<div layout="column">
+				<p ng-if="loc.start1">Mon: {{loc.start1}} - {{loc.end1}}</p>
+				<p ng-if="loc.start2">Tue:{{loc.start2}} - {{loc.end2}}</p>
+				<p ng-if="loc.start3">Wed: {{loc.start3}} - {{loc.end3}}</p>
+				<p ng-if="loc.start4">Thu: {{loc.start4}} - {{loc.end4}}</p>
+				<p ng-if="loc.start5">Thu: {{loc.start5}} - {{loc.end5}}</p>
+				<p ng-if="loc.start6">Thu: {{loc.start6}} - {{loc.end6}}</p>
+				<p ng-if="loc.start0">Thu: {{loc.start0}} - {{loc.end0}}</p>
+			</div>
+		</div>
+
+		<!-- add location form -->
 		<div layout-padding>
-			<h4>Tell us your locations and hours, so people can find your turck!</h4>
 			<md-button ng-show="!addLocation" ng-click="addLocation = ! addLocation">Add Location</md-button>
 			<!-- add location box -->
 			<div ng-show="addLocation">
 				<md-input-container class="md-block">
 				  <label>Address</label>
-				  <input ng-model="address">
+				  <input ng-model="location.address">
 				  <div>{{address}}</div>
 				</md-input-container>
 				<!-- add hours -->
@@ -45,7 +61,7 @@
 					<span style="padding-right: 20px">Mon:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start1">
+	        <md-select ng-model="location.start1">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -53,7 +69,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end1">
+		        <md-select ng-model="location.end1">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -63,7 +79,7 @@
 					<span style="padding-right: 20px">Tue:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start2">
+	        <md-select ng-model="location.start2">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -71,7 +87,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end2">
+		        <md-select ng-model="location.end2">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -81,7 +97,7 @@
 					<span style="padding-right: 20px">Wed:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start3">
+	        <md-select ng-model="location.start3">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -89,7 +105,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end3">
+		        <md-select ng-model="location.end3">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -99,7 +115,7 @@
 					<span style="padding-right: 20px">Thu:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start4">
+	        <md-select ng-model="location.start4">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -107,7 +123,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end4">
+		        <md-select ng-model="location.end4">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -120,7 +136,7 @@
 					<span style="padding-right: 20px">Fri:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start5">
+	        <md-select ng-model="location.start5">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -128,7 +144,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end5">
+		        <md-select ng-model="location.end5">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -138,7 +154,7 @@
 					<span style="padding-right: 20px">Sat:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start6">
+	        <md-select ng-model="location.start6">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -146,7 +162,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end6">
+		        <md-select ng-model="location.end6">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -156,7 +172,7 @@
 					<span style="padding-right: 20px">Sun:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="start0">
+	        <md-select ng-model="location.start0">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -164,60 +180,19 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="end0">
+		        <md-select ng-model="location.end0">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
 		        </md-select>
 					</md-input-container>
 				</div>
-					<md-button ng-click="editLocation()">Add Location</md-button>
+					<md-button ng-click="editLocation()">Add A Location</md-button>
 					<md-button ng-click="addLocation = ! addLocation">Cancel</md-button>	
 				</div> <!--end hours -->
 			</div> <!-- end location box -->
 		</div>
 		<!-- <md-button>Add a business location and working hours</md-button> -->
+		<md-button ng-submit="submitProfile()">Submit your profile</md-button>
 	</div>
 </div>
-	        <!-- <md-input-container class="md-block">
-	          <label>Address</label>
-	          <input ng-model="user.address">
-	        </md-input-container>
-	        <md-input-container md-no-float class="md-block">
-	          <input ng-model="user.address2" placeholder="Address 2">
-	        </md-input-container>
-	        <div layout-gt-sm="row">
-	          <md-input-container class="md-block" flex-gt-sm>
-	            <label>City</label>
-	            <input ng-model="user.city">
-	          </md-input-container>
-	          <md-input-container class="md-block" flex-gt-sm>
-	            <label>State</label>
-	            <md-select ng-model="user.state">
-	              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-	                {{state.abbrev}}
-	              </md-option>
-	            </md-select>
-	          </md-input-container>
-	          <md-input-container class="md-block" flex-gt-sm>
-	            <label>Postal Code</label>
-	            <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
-	                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-	            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-	              <div ng-message="required" class="my-message">You must supply a postal code.</div>
-	              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
-	                code.
-	              </div>
-	              <div ng-message="md-maxlength" class="my-message">
-	                Don't use the long version silly...we don't need to be that specific...
-	              </div>
-	            </div>
-	          </md-input-container>
-	        </div>
-	        <md-input-container class="md-block">
-	          <label>Biography</label>
-	          <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-	        </md-input-container>
-	      </form>
-	    </div>
-	   -->
