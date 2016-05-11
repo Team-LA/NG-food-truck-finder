@@ -84,11 +84,12 @@ module.exports.getProfile = function(request, response) {
 
 module.exports.profile = function(request, response) {
 
-	var id = request.id;
+	// var id = request.id;
 	//var id = "570fcadf4763551b1fcafe03"
 	var name = request.body.name;
 	var cuisine = request.body.cuisine;
 	var locations = request.body.locations;
+	console.log('test', locations)
 	//find the user in database
 	User.findById(id, function (err, user) {
 		if (err) {

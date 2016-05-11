@@ -17,8 +17,13 @@ angular.module('profile.service',[])
             data: user
         });
     };
+
+    var submitProfile = function(data) {
+        return $http.post('/profile', data);
+    }
     return {
         get: get,
-        post: post
+        post: post,
+        submitProfile: submitProfile
     };
 });
