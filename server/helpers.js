@@ -84,20 +84,16 @@ module.exports.getProfile = function(request, response) {
 
 module.exports.profile = function(request, response) {
 
-	// var id = request.id;
-	//var id = "570fcadf4763551b1fcafe03"
-	var name = request.body.name;
-	var cuisine = request.body.cuisine;
-	var locations = request.body.locations;
-	console.log('test', locations)
+	var id = request.id;
+
 	//find the user in database
 	User.findById(id, function (err, user) {
 		if (err) {
 			response.status(500).send("Server error.")
 		} else {
-		 	user.name = name;
-		  	user.cuisine = cuisine;
-		  	user.locations = locations;
+		 	user.name = request.body.name;
+		  user.cuisine = request.body.cuisine;
+		  user.locations = request.body.locations;
 
 			var index = 0;
 			promiseWhile(function () { return index < locations.length; }, function () {
@@ -122,6 +118,42 @@ module.exports.profile = function(request, response) {
 
 	});
 };
+
+module.exports.editProfile = function(request, response) {
+	var id = request.id;
+
+	//find the user in database
+	User.findById(id, function (err, user) {
+		if (err) {
+			response.status(500).send("Server error.")
+		} else {
+		 	user.name = request.body.name;
+		  user.cuisine = request.body.cuisine;
+		  user.locations = request.body.locations;
+
+			var index = 0;
+			promiseWhile(function () { return index < user.locations.length; }, function () {
+				sendRequest(user.locations[index].address)
+				.then(function(res){
+						user.locations[index].longitude = res.longitude;
+						user.locations[index].latitude = res.latitude;
+						index++;
+					});
+				return Q.delay(300); // arbitrary async
+			}).then(function () {
+				//save user to the database
+				user.save(function (err) {
+					if (err) {
+						response.status(500).send("Server error about database.")
+					} else {
+						response.status(201).send(user);
+					}
+				});
+			}).done();
+		}
+
+	});
+}
 
 module.exports.findTrucks = function(request, response) {
 	var date = new Date();

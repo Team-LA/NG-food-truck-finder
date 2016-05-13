@@ -1,12 +1,11 @@
 angular.module('profile.service',[])
 
-.factory('HttpRequest', function($http) {
+.factory('Profiledata', function($http) {
+
     var get = function () {
         return $http({
             method: 'GET',
             url: '/profile',
-        }).then(function (resp) {
-            return resp.data;
         });
     };
 
@@ -19,8 +18,11 @@ angular.module('profile.service',[])
     };
 
     var submitProfile = function(data) {
-        return $http.post('/profile', data);
+        console.log('data in service',data)
+        return $http.post('/editProfile', data);
     }
+
+
     return {
         get: get,
         post: post,
