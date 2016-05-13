@@ -36,13 +36,13 @@
 		<div layout-padding ng-if="locations.length > 0" ng-repeat="loc in locations">
 			<p>Address: {{loc.address}}</p>
 			<div layout="column">
-				<p ng-if="loc.start1">Mon: {{loc.start1}} - {{loc.end1}}</p>
-				<p ng-if="loc.start2">Tue:{{loc.start2}} - {{loc.end2}}</p>
-				<p ng-if="loc.start3">Wed: {{loc.start3}} - {{loc.end3}}</p>
-				<p ng-if="loc.start4">Thu: {{loc.start4}} - {{loc.end4}}</p>
-				<p ng-if="loc.start5">Thu: {{loc.start5}} - {{loc.end5}}</p>
-				<p ng-if="loc.start6">Thu: {{loc.start6}} - {{loc.end6}}</p>
-				<p ng-if="loc.start0">Thu: {{loc.start0}} - {{loc.end0}}</p>
+				<p ng-if="loc.hours['1'][0] != null">Mon: {{loc.hours["1"][0]}} - {{loc.hours["1"][1]}}</p>
+				<p ng-if="loc.hours['2'][0] != null">Tue: {{loc.hours["2"][0]}} - {{loc.hours["2"][1]}}</p>
+				<p ng-if="loc.hours['3'][0] != null">Wed: {{loc.hours["3"][0]}} - {{loc.hours["3"][1]}}</p>
+				<p ng-if="loc.hours['4'][0] != null">Thu: {{loc.hours["4"][0]}} - {{loc.hours["4"][1]}}</p>
+				<p ng-if="loc.hours['5'][0] != null">Thu: {{loc.hours["5"][0]}} - {{loc.hours["5"][1]}}</p>
+				<p ng-if="loc.hours['6'][0] != null">Thu: {{loc.hours["6"][0]}} - {{loc.hours["6"][1]}}</p>
+				<p ng-if="loc.hours['0'][0] != null">Thu: {{loc.hours["0"][0]}} - {{loc.hours["0"][1]}}</p>
 			</div>
 		</div>
 
@@ -61,7 +61,7 @@
 					<span style="padding-right: 20px">Mon:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start1">
+	        <md-select ng-model="start1">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -69,7 +69,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end1">
+		        <md-select ng-model="end1">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -79,7 +79,7 @@
 					<span style="padding-right: 20px">Tue:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start2">
+	        <md-select ng-model="start2">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -87,7 +87,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end2">
+		        <md-select ng-model="end2">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -97,7 +97,7 @@
 					<span style="padding-right: 20px">Wed:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start3">
+	        <md-select ng-model="start3">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -105,7 +105,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end3">
+		        <md-select ng-model="end3">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -115,7 +115,7 @@
 					<span style="padding-right: 20px">Thu:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start4">
+	        <md-select ng-model="start4">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -123,7 +123,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end4">
+		        <md-select ng-model="end4">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -136,7 +136,7 @@
 					<span style="padding-right: 20px">Fri:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start5">
+	        <md-select ng-model="start5">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -144,7 +144,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end5">
+		        <md-select ng-model="end5">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -154,7 +154,7 @@
 					<span style="padding-right: 20px">Sat:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start6">
+	        <md-select ng-model="start6">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -162,7 +162,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end6">
+		        <md-select ng-model="end6">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -172,7 +172,7 @@
 					<span style="padding-right: 20px">Sun:</span>
 					<md-input-container>
 	        	<label>start</label>
-	        <md-select ng-model="location.start0">
+	        <md-select ng-model="start0">
 	          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -180,7 +180,7 @@
 					</md-input-container>
 					<md-input-container>
 		      <label>end</label>
-		        <md-select ng-model="location.end0">
+		        <md-select ng-model="end0">
 		          <md-option ng-repeat="time in timeList" value="{{time}}">
 		            {{time}}
 		          </md-option>
@@ -193,6 +193,6 @@
 			</div> <!-- end location box -->
 		</div>
 		<!-- <md-button>Add a business location and working hours</md-button> -->
-		<md-button ng-submit="submitProfile()">Submit your profile</md-button>
+		<md-button ng-click="submitProfile()">Submit your profile</md-button>
 	</div>
 </div>

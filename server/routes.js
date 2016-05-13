@@ -52,6 +52,10 @@ router.post('/profile', helpers.verifyToken, function(request, response) {
 	helpers.profile(request, response);
 });
 
+router.post('/editProfile', helpers.verifyToken, function(request, response) {
+	helpers.editProfile(request, response);
+})
+
 
 router.post('/findTrucks', function(request, response) {
 
